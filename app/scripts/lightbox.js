@@ -52,8 +52,8 @@ lightbox = new Lightbox options
       this.fileCloseImage = 'assets/lightbox/close.png';
       this.resizeDuration = 700;
       this.fadeDuration = 500;
-      this.labelImage = "Image";
-      this.labelOf = "of";
+      this.labelImage = 'Image';
+      this.labelOf = 'of';
     }
 
     return LightboxOptions;
@@ -85,42 +85,42 @@ lightbox = new Lightbox options
     Lightbox.prototype.build = function() {
       var $lightbox,
         _this = this;
-      $("<div>", {
+      $('<div>', {
         id: 'lightboxOverlay'
       }).after($('<div/>', {
         id: 'lightbox'
       }).append($('<div/>', {
-        "class": 'lb-outerContainer'
+        'class': 'lb-outerContainer'
       }).append($('<div/>', {
-        "class": 'lb-container'
+        'class': 'lb-container'
       }).append($('<img/>', {
-        "class": 'lb-image'
+        'class': 'lb-image'
       }), $('<div/>', {
-        "class": 'lb-nav'
+        'class': 'lb-nav'
       }).append($('<a/>', {
-        "class": 'lb-prev'
+        'class': 'lb-prev'
       }), $('<a/>', {
-        "class": 'lb-next'
+        'class': 'lb-next'
       })), $('<div/>', {
-        "class": 'lb-loader'
+        'class': 'lb-loader'
       }).append($('<a/>', {
-        "class": 'lb-cancel'
+        'class': 'lb-cancel'
       }).append($('<img/>', {
         src: this.options.fileLoadingImage
       }))))), $('<div/>', {
-        "class": 'lb-dataContainer'
+        'class': 'lb-dataContainer'
       }).append($('<div/>', {
-        "class": 'lb-data'
+        'class': 'lb-data'
       }).append($('<div/>', {
-        "class": 'lb-details'
+        'class': 'lb-details'
       }).append($('<span/>', {
-        "class": 'lb-caption'
+        'class': 'lb-caption'
       }), $('<span/>', {
-        "class": 'lb-number'
+        'class': 'lb-number'
       })), $('<div/>', {
-        "class": 'lb-closeContainer'
+        'class': 'lb-closeContainer'
       }).append($('<a/>', {
-        "class": 'lb-close'
+        'class': 'lb-close'
       }).append($('<img/>', {
         src: this.options.fileCloseImage
       }))))))).appendTo($('body'));
@@ -153,9 +153,9 @@ lightbox = new Lightbox options
 
     Lightbox.prototype.start = function($link) {
       var $lightbox, $window, a, i, imageNumber, left, top, _len, _ref;
-      $(window).on("resize", this.sizeOverlay);
+      $(window).on('resize', this.sizeOverlay);
       $('select, object, embed').css({
-        visibility: "hidden"
+        visibility: 'hidden'
       });
       $('#lightboxOverlay').width($(document).width()).height($(document).height()).fadeIn(this.options.fadeDuration);
       this.album = [];
@@ -166,7 +166,7 @@ lightbox = new Lightbox options
           title: $link.attr('title')
         });
       } else {
-        _ref = $($link.prop("tagName") + '[rel="' + $link.attr('rel') + '"]');
+        _ref = $($link.prop('tagName') + '[rel="' + $link.attr('rel') + '"]');
         for (i = 0, _len = _ref.length; i < _len; i++) {
           a = _ref[i];
           this.album.push({
@@ -274,7 +274,7 @@ lightbox = new Lightbox options
       var $lightbox,
         _this = this;
       $lightbox = $('#lightbox');
-      if (typeof this.album[this.currentImageIndex].title !== 'undefined' && this.album[this.currentImageIndex].title !== "") {
+      if (typeof this.album[this.currentImageIndex].title !== 'undefined' && this.album[this.currentImageIndex].title !== '') {
         $lightbox.find('.lb-caption').html(this.album[this.currentImageIndex].title).fadeIn('fast');
       }
       if (this.album.length > 1) {
@@ -330,11 +330,11 @@ lightbox = new Lightbox options
 
     Lightbox.prototype.end = function() {
       this.disableKeyboardNav();
-      $(window).off("resize", this.sizeOverlay);
+      $(window).off('resize', this.sizeOverlay);
       $('#lightbox').fadeOut(this.options.fadeDuration);
       $('#lightboxOverlay').fadeOut(this.options.fadeDuration);
       return $('select, object, embed').css({
-        visibility: "visible"
+        visibility: 'visible'
       });
     };
 

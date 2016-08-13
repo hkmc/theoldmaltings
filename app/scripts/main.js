@@ -14,15 +14,15 @@ $(document).ready(function(){
     options: {scrollwheel: false}
   };
 
-  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
   var marker = new google.maps.Marker({
     position: latLng,
     map: map,
-    title:"The Old Maltings"
+    title:'The Old Maltings'
   });
 
-  $(".help-inline").hide();
+  $('.help-inline').hide();
 
   $('.toggleTrigger').click(function() {
     //$('.toggleTarget').toggle('slow');
@@ -38,7 +38,7 @@ $(document).ready(function(){
     return false;
   });
 
-  $(".nav li").click(function(){
+  $('.nav li').click(function(){
 
     $(this).addClass('active').siblings().removeClass('active');
     $('#navigation').collapse('hide');
@@ -46,36 +46,36 @@ $(document).ready(function(){
 
   });
 
-  $(".banner").hover(function() {
-    $(this).find(".banner-caption").slideToggle('fast');
+  $('.banner').hover(function() {
+    $(this).find('.banner-caption').slideToggle('fast');
   });
 
   var hasError = false;
   var showError = function(inputSelector) {
     $(inputSelector).siblings().first().show();
-    $(inputSelector).closest(".control-group").addClass("error");
+    $(inputSelector).closest('.control-group').addClass('error');
   };
 
-  $("#enquiry").click(function() {
+  $('#enquiry').click(function() {
     var btn = $(this),
       hasError = false,
-      _name = $("#inputName").val(),
-      _email = $("#inputEmail").val(),
-      _msg = $("#inputMessage").val();
+      _name = $('#inputName').val(),
+      _email = $('#inputEmail').val(),
+      _msg = $('#inputMessage').val();
 
-    $(".control-group").removeClass("error");
-    $(".help-inline").hide();
+    $('.control-group').removeClass('error');
+    $('.help-inline').hide();
 
     if (_name.length === 0) {
-      showError("#inputName");
+      showError('#inputName');
       hasError = true;
     }
     if (_email.length === 0) {
-      showError("#inputEmail");
+      showError('#inputEmail');
       hasError = true;
     }
     if (_msg.length === 0) {
-      showError("#inputMessage");
+      showError('#inputMessage');
       hasError = true;
     }
     if (hasError) {
@@ -84,13 +84,13 @@ $(document).ready(function(){
     btn.button('loading');
 
     $.ajax({
-      url: 'https://formspree.io/huwmcleod@gmail.com',
+        url: 'https://formspree.io/theoldmaltingsthornham@gmail.com',
       method: 'POST',
       data: {message: _msg, email: _email, name: _name},
       dataType: 'json',
       success: function (data) {
         btn.siblings().first().show();
-        btn.closest(".control-group").addClass("success");
+        btn.closest('.control-group').addClass('success');
         btn.button('reset');
       },
       error: function () {
