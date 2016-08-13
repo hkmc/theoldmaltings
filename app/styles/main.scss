@@ -21,6 +21,7 @@ body {
   font-family: 'Arimo', cursive;
   font-size: 16px;
   line-height: 26px;
+  min-width: 320px;
 }
 
 a {
@@ -134,55 +135,58 @@ input[type="color"]:focus,
 //-------------------------------------------------- */
 //
 ///* Special class on .container surrounding .navbar, used for positioning it into place. */
-//.navbar-wrapper {
-//  position: relative;
-//  z-index: 10;
-//  margin-top: 20px;
-//  margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-//  font-size: 20px;
-//}
-//
-///* Remove border and change up box shadow for more contrast */
-//.navbar .navbar-inner {
-//  border: 0;
-//  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-//  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
-//  box-shadow: 0 2px 10px rgba(0,0,0,.25);
-//  background: $menuBackgroundColor;
-//}
-//
-//.navbar .active {
-//  background: $menuBackgroundColor;
-//}
-//
-//
-///* Downsize the brand/project name a bit */
-//.navbar .brand {
-//  padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
-//  font-size: 16px;
-//  font-weight: bold;
-//  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
-//}
-//
-///* Navbar links: increase padding for taller navbar */
-//.navbar .nav > li > a {
-//  padding: 15px 20px;
-//  color: white;
-//}
-//
-//.navbar-inverse .nav .active > a,
-//.navbar-inverse .nav .active > a:hover,
-//.navbar-inverse .nav .active > a:focus,
-//.navbar-inverse .nav-collapse .nav > li > a {
-//  background: $menuBackgroundColor;
-//  color: white;
-//}
-//
-///* Offset the responsive button for proper vertical alignment */
-//.navbar .btn-navbar {
-//  margin-top: 10px;
-//}
-//
+.navbar-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+  margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  font-size: 20px;
+}
+
+/* Remove border and change up box shadow for more contrast */
+.navbar .navbar-inner {
+  border: 0;
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  background: $menuBackgroundColor;
+}
+
+.navbar .active {
+  background: $menuBackgroundColor;
+}
+
+
+/* Downsize the brand/project name a bit */
+.navbar .brand {
+  padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+}
+
+/* Navbar links: increase padding for taller navbar */
+.navbar .nav > li > a {
+  padding: 15px 20px;
+  color: white;
+}
+
+.nav > li > a,
+.nav > li > a:focus,
+.nav .nav-collapse .nav > li > a {
+  background-color: $menuBackgroundColor;
+  color: white;
+}
+
+.nav > li > a:hover{
+  color: white;
+  background-color: darken($menuBackgroundColor, 5%);
+}
+
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+
 
 /*********************************************************/
 
@@ -190,6 +194,20 @@ input[type="color"]:focus,
   position: relative;
   margin-bottom: 50px;
   border: 0;
+  img{
+    max-width: 100%;
+  }
+}
+
+.btn-default {
+  background-color: $menuBackgroundColor;
+  color: white;
+
+  &:hover,
+  &:focus   {
+    background-color: darken($menuBackgroundColor, 10%);
+    color: white;
+  }
 }
 
 .bannerMargin {
@@ -225,7 +243,7 @@ input[type="color"]:focus,
   margin-right: 10px;
 }
 
-.marketing {
+.main {
   background: white;
   padding: 50px 0px 50px 0px;
   text-align: center;
@@ -244,7 +262,7 @@ input[type="color"]:focus,
   margin-right: auto;
   width: 80%;
   text-align: left;
-  padding-bottom: 150px;
+  padding-bottom: 20px;
 
 }
 
