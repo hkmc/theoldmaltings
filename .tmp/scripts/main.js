@@ -81,7 +81,7 @@ $(document).ready(function () {
     btn.button('loading');
 
     $.ajax({
-      url: 'https://formspree.io/huwmcleod@gmail.com',
+      url: 'https://formspree.io/theoldmaltingsthornham@gmail.com',
       method: 'POST',
       data: { message: _msg, email: _email, name: _name },
       dataType: 'json',
