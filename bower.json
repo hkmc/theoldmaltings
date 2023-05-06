@@ -1,6 +1,7 @@
 {
   "name": "maltings2",
   "private": true,
+  "strict-ssl": false,
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1"
